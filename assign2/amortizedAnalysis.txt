@@ -1,0 +1,36 @@
+Name: Alan Macabuhay
+Date: 4/16/17
+Assignment 2 part 2: Amortized Analysis of the Dynamic Array
+
+1. How many cost units are spent in the entire process of performing 32 consecutive 
+	push operations on an empty array which starts out at capacity 8, assuming that 
+	the array will double in capacity each time a new item is added to an already full
+	dynamic array? As N (ie. the number of pushes) grows large, under this strategy for resizing,
+	what is the big-oh complexity for a push?
+
+	Answer: 
+		It will take 56 units of cost to perform 32 consecutive push operations on an empty array.
+		As N grows large, the big-oh complexity for push is O(1)+. The average unit of cost is 1.75.
+
+2.  How many cost units are spent in the entire process of performing 32 consecutive 
+	push operations on an empty array which starts out at capacity 8, assuming that 
+	the array will grow by a constant 2 spaces each time a new item is added to an already full
+	dynamic array? As N (ie. the number of pushes) grows large, under this strategy for resizing,
+	what is the big-oh complexity for a push?
+
+	Answer:
+		It will take 260 units of cost if the array grows by a constant 2 spaces each time a new
+		item is added to an already full dynamic array. The average unit of cost is 8.1. In this case,
+		the complexity for push is O(n). 
+
+3.  Suppose that a dynamic array stack doubles its capacity when it is full, and shrinks (on Pop only) 
+	its capacity by half when the array is half full or less. Can you devise a sequence of N push() and
+	pop() operations which will result in poor performance (O(n^2) total cost)? How might you adjust
+	the array's shrinking policy to avoid this? (Hint: you may assume that the initial capacity
+	of the array is N/2.)
+
+	Answer:
+		To get a poor performance, we can push until the array is at capacity so that it doubles
+		then pop again right after this to reduce the capacity by half then switch off between push 
+		and pop. To prevent this poor performance, the array's shrinking policy can be changed to
+		shrink the capacity in half when the array is 1/4 full or less. 
